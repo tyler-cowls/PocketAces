@@ -2,6 +2,7 @@ package com.example.android.bluetoothchat;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -9,10 +10,17 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Button;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import com.example.android.common.activities.SampleActivityBase;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class BlackjackActivity extends Activity {
+public class BlackjackActivity extends SampleActivityBase {
 
     int curState = 0;
     ArrayList<ImageView> dealerImages = new ArrayList<ImageView>();
@@ -24,6 +32,8 @@ public class BlackjackActivity extends Activity {
     Hand dealer = new Hand(dealerImages, this);
     Hand userOne = new Hand(userOneImages, this);
     Hand userTwo = new Hand(userTwoImages, this);
+
+    AtomicInteger otherRandNum = new AtomicInteger(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +57,16 @@ public class BlackjackActivity extends Activity {
         textViewTurn.bringToFront();
 
         textViewTurn.setText("Dealing Cards");
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        BluetoothChatFragment fragment = new BluetoothChatFragment();
+        fragment.setBJVars(otherRandNum,1);
+        fragment.setBJViews(dealerImages, 1);
+        fragment.setBJViews(userOneImages, 2);
+        fragment.setBJViews(userTwoImages, 3);
+        fragment.setBJActivity(this);
+        transaction.replace(R.id.sample_content_fragment, fragment);
+        transaction.commit();
 
         dealerImages.add((ImageView)findViewById(R.id.dcard1));
         dealerImages.add((ImageView)findViewById(R.id.dcard2));
@@ -81,113 +101,158 @@ public class BlackjackActivity extends Activity {
         userTwoImages.add((ImageView)findViewById(R.id.p2card9));
         userTwoImages.add((ImageView)findViewById(R.id.p2card10));
 
-        //Initial hand set up
-        userOne.addCard(deck.deal());
-        userTwo.addCard(deck.deal());
-        dealer.addCard(deck.deal());
-        userOne.addCard(deck.deal());
-        userTwo.addCard(deck.deal());
-        dealer.addCard(deck.deal());
+        Random rand = new Random();
+        int randomNum = rand.nextInt(10000000);
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+        JSONObject sendPacket = makeJSON("Blackjack", "", "", "", "" + randomNum, "");
+        sendText.setText(sendPacket.toString());
+        mSendButton.performClick();
 
-        dealer.showOne();
-        userOne.toImage();
-        userTwo.toImage();
-
-        //Check if anyone has blackjack yet
-        if(dealer.hasBlackjack() && userOne.hasBlackjack() && userTwo.hasBlackjack()) // All has Blackjack
+        while(otherRandNum.get() == 0)
         {
-            dealer.toImage();
-            textResult1.setText(message + " tied!");
-            textResult2.setText("User Two tied!");
-            textResult1.setVisibility(View.VISIBLE);
-            textResult2.setVisibility(View.VISIBLE);
-
-            View view1 = findViewById(R.id.view1);
-            View view2 = findViewById(R.id.view2);
-            view1.setVisibility(View.VISIBLE);
-            view2.setVisibility(View.VISIBLE);
-
-            curState = 3;
-            displayEnd();
+            ;
         }
-        else if(dealer.hasBlackjack() && userOne.hasBlackjack() && !userTwo.hasBlackjack()) // Only Dealer and User One has Blackjack
+
+        if(otherRandNum.get() < randomNum)
         {
-            dealer.toImage();
-            textResult1.setText(message + " tied!");
-            textResult2.setText("User Two lost!");
-            textResult1.setVisibility(View.VISIBLE);
-            textResult2.setVisibility(View.VISIBLE);
+            //Initial hand set up
+            Card someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            userOne.addCard(someCard);
 
-            View view1 = findViewById(R.id.view1);
-            View view2 = findViewById(R.id.view2);
-            view1.setVisibility(View.VISIBLE);
-            view2.setVisibility(View.VISIBLE);
+            someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "2");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            userTwo.addCard(someCard);
 
-            curState = 3;
-            displayEnd();
-        }
-        else if(dealer.hasBlackjack() && !userOne.hasBlackjack() && userTwo.hasBlackjack()) // Only Dealer and User Two has Blackjack
-        {
-            dealer.toImage();
-            textResult1.setText(message + " lost!");
-            textResult2.setText("User Two tied!");
-            textResult1.setVisibility(View.VISIBLE);
-            textResult2.setVisibility(View.VISIBLE);
+            someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "3");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            dealer.addCard(someCard);
 
-            View view1 = findViewById(R.id.view1);
-            View view2 = findViewById(R.id.view2);
-            view1.setVisibility(View.VISIBLE);
-            view2.setVisibility(View.VISIBLE);
+            someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            userOne.addCard(someCard);
 
-            curState = 3;
-            displayEnd();
-        }
-        else if(!dealer.hasBlackjack() && userOne.hasBlackjack() && userTwo.hasBlackjack()) // Only User One and User Two has Blackjack
-        {
-            dealer.toImage();
-            textResult1.setText(message + " won!");
-            textResult2.setText("User Two won!");
-            textResult1.setVisibility(View.VISIBLE);
-            textResult2.setVisibility(View.VISIBLE);
+            someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "2");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            userTwo.addCard(someCard);
 
-            View view1 = findViewById(R.id.view1);
-            View view2 = findViewById(R.id.view2);
-            view1.setVisibility(View.VISIBLE);
-            view2.setVisibility(View.VISIBLE);
+            someCard = deck.deal();
+            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "3");
+            sendText.setText(sendPacket.toString());
+            mSendButton.performClick();
+            dealer.addCard(someCard);
 
-            curState = 3;
-            displayEnd();
-        }
-        else if(dealer.hasBlackjack() && !userOne.hasBlackjack() && !userTwo.hasBlackjack()) // Only Dealer has Blackjack
-        {
-            dealer.toImage();
-            textResult1.setText(message + " lost!");
-            textResult2.setText("User Two lost!");
-            textResult1.setVisibility(View.VISIBLE);
-            textResult2.setVisibility(View.VISIBLE);
+            dealer.showOne();
+            userOne.toImage();
+            userTwo.toImage();
 
-            View view1 = findViewById(R.id.view1);
-            View view2 = findViewById(R.id.view2);
-            view1.setVisibility(View.VISIBLE);
-            view2.setVisibility(View.VISIBLE);
+            //Check if anyone has blackjack yet
+            if(dealer.hasBlackjack() && userOne.hasBlackjack() && userTwo.hasBlackjack()) // All has Blackjack
+            {
+                dealer.toImage();
+                textResult1.setText(message + " tied!");
+                textResult2.setText("User Two tied!");
+                textResult1.setVisibility(View.VISIBLE);
+                textResult2.setVisibility(View.VISIBLE);
 
-            curState = 3;
-            displayEnd();
-        }
-        else if(!dealer.hasBlackjack() && userOne.hasBlackjack() && !userTwo.hasBlackjack()) //Skip User One's turn
-        {
-            curState = 2;
-            textViewTurn.setText("User Two's Turn");
-        }
-        else if(!dealer.hasBlackjack() && !userOne.hasBlackjack() && userTwo.hasBlackjack()) //Skip User Two's turn
-        {
-            curState++;
-            textViewTurn.setText(message + "'s Turn");
-        }
-        else
-        {
-            curState++;
-            textViewTurn.setText(message + "'s Turn");
+                View view1 = findViewById(R.id.view1);
+                View view2 = findViewById(R.id.view2);
+                view1.setVisibility(View.VISIBLE);
+                view2.setVisibility(View.VISIBLE);
+
+                curState = 3;
+                displayEnd();
+            }
+            else if(dealer.hasBlackjack() && userOne.hasBlackjack() && !userTwo.hasBlackjack()) // Only Dealer and User One has Blackjack
+            {
+                dealer.toImage();
+                textResult1.setText(message + " tied!");
+                textResult2.setText("User Two lost!");
+                textResult1.setVisibility(View.VISIBLE);
+                textResult2.setVisibility(View.VISIBLE);
+
+                View view1 = findViewById(R.id.view1);
+                View view2 = findViewById(R.id.view2);
+                view1.setVisibility(View.VISIBLE);
+                view2.setVisibility(View.VISIBLE);
+
+                curState = 3;
+                displayEnd();
+            }
+            else if(dealer.hasBlackjack() && !userOne.hasBlackjack() && userTwo.hasBlackjack()) // Only Dealer and User Two has Blackjack
+            {
+                dealer.toImage();
+                textResult1.setText(message + " lost!");
+                textResult2.setText("User Two tied!");
+                textResult1.setVisibility(View.VISIBLE);
+                textResult2.setVisibility(View.VISIBLE);
+
+                View view1 = findViewById(R.id.view1);
+                View view2 = findViewById(R.id.view2);
+                view1.setVisibility(View.VISIBLE);
+                view2.setVisibility(View.VISIBLE);
+
+                curState = 3;
+                displayEnd();
+            }
+            else if(!dealer.hasBlackjack() && userOne.hasBlackjack() && userTwo.hasBlackjack()) // Only User One and User Two has Blackjack
+            {
+                dealer.toImage();
+                textResult1.setText(message + " won!");
+                textResult2.setText("User Two won!");
+                textResult1.setVisibility(View.VISIBLE);
+                textResult2.setVisibility(View.VISIBLE);
+
+                View view1 = findViewById(R.id.view1);
+                View view2 = findViewById(R.id.view2);
+                view1.setVisibility(View.VISIBLE);
+                view2.setVisibility(View.VISIBLE);
+
+                curState = 3;
+                displayEnd();
+            }
+            else if(dealer.hasBlackjack() && !userOne.hasBlackjack() && !userTwo.hasBlackjack()) // Only Dealer has Blackjack
+            {
+                dealer.toImage();
+                textResult1.setText(message + " lost!");
+                textResult2.setText("User Two lost!");
+                textResult1.setVisibility(View.VISIBLE);
+                textResult2.setVisibility(View.VISIBLE);
+
+                View view1 = findViewById(R.id.view1);
+                View view2 = findViewById(R.id.view2);
+                view1.setVisibility(View.VISIBLE);
+                view2.setVisibility(View.VISIBLE);
+
+                curState = 3;
+                displayEnd();
+            }
+            else if(!dealer.hasBlackjack() && userOne.hasBlackjack() && !userTwo.hasBlackjack()) //Skip User One's turn
+            {
+                curState = 2;
+                textViewTurn.setText("User Two's Turn");
+            }
+            else if(!dealer.hasBlackjack() && !userOne.hasBlackjack() && userTwo.hasBlackjack()) //Skip User Two's turn
+            {
+                curState++;
+                textViewTurn.setText(message + "'s Turn");
+            }
+            else
+            {
+                curState++;
+                textViewTurn.setText(message + "'s Turn");
+            }
         }
     }
 
@@ -386,12 +451,32 @@ public class BlackjackActivity extends Activity {
         Intent newIntent = new Intent(this, BlackjackActivity.class);
         newIntent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
         startActivity(newIntent);
+        finish();
     }
 
     public void backToMain(View view)
     {
         Intent newIntent = new Intent(this, MainActivity.class);
         startActivity(newIntent);
+        finish();
+    }
+
+    private JSONObject makeJSON(String game, String hitOrStay, String state, String card, String randNum, String user)
+    {
+        JSONObject jo = new JSONObject();
+        try {
+            jo.put("Game", game);
+            jo.put("HitOrStay", hitOrStay);
+            jo.put("User", user);
+            jo.put("State", state);
+            jo.put("Card", card);
+            jo.put("RandNum", randNum);
+        }
+        catch (JSONException e)
+        {
+
+        }
+        return jo;
     }
 }
 

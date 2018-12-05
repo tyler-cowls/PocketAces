@@ -1001,7 +1001,7 @@ public class NertsActivity extends SampleActivityBase {
         {
             result.setText(message + " won with " + userOneScore + " points!");
         }
-        else if (userOne.getScore() == userTwo.getScore())
+        else if (userOne.getScore() == userTwoScore.get())
         {
             result.setText("Users tied with " + userOneScore + " points!");
         }

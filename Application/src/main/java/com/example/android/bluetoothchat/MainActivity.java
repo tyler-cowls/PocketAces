@@ -123,6 +123,7 @@ public class MainActivity extends SampleActivityBase {
             message = "No Name";
         intent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
         startActivity(intent);
+        finish();
     }
 
     /** Called when the user taps the Send button */
@@ -135,5 +136,6 @@ public class MainActivity extends SampleActivityBase {
             message = "No Name";
         intent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
         startActivity(intent);
+        finish();
     }
 }

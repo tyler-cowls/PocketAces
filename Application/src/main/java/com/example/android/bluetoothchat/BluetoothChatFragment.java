@@ -38,11 +38,14 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.example.android.common.logger.Log;
@@ -102,6 +105,48 @@ public class BluetoothChatFragment extends Fragment {
     private AtomicInteger userTwoDone;
     private AtomicInteger userTwoNerts;
     private AtomicInteger userTwoScore;
+
+    private AtomicInteger otherRandNum;
+
+    ArrayList<ImageView> dealerImages = new ArrayList<ImageView>();
+    ArrayList<ImageView> userOneImages = new ArrayList<ImageView>();
+    ArrayList<ImageView> userTwoImages = new ArrayList<ImageView>();
+
+    int dealerCount = 0;
+    int userOneCount = 0;
+    int userTwoCount = 0;
+
+    BlackjackActivity table;
+
+    public void setBJActivity(BlackjackActivity temp)
+    {
+        table = temp;
+    }
+
+    public void setBJVars(AtomicInteger temp, int i)
+    {
+        if(i == 1)
+        {
+            otherRandNum = temp;
+        }
+
+    }
+
+    public void setBJViews(ArrayList<ImageView> temp, int i)
+    {
+        if(i == 1)
+        {
+            dealerImages = temp;
+        }
+        else if(i == 2)
+        {
+            userOneImages = temp;
+        }
+        else if(i == 3)
+        {
+            userTwoImages = temp;
+        }
+    }
 
     public void setNertzBooleans(AtomicInteger temp, int i)
     {
@@ -574,6 +619,42 @@ public class BluetoothChatFragment extends Fragment {
                 {
                     userTwoNerts.set(1);
                     userTwoScore.set(Integer.parseInt(obj.getString("Score")));
+                }
+            }
+            else
+            {
+                if(!obj.getString("RandNum").equals(""))
+                {
+                    otherRandNum.set(Integer.parseInt(obj.getString("RandNum")));
+                }
+                else if(obj.getString("State").equals("0"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+
+                    if(obj.getString("User").equals("1"))
+                    {
+                        String path = "card" + newCard.toString();
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        userOneImages.get(userOneCount).setImageResource(imageCard);
+                        userOneCount++;
+                    }
+                    else if(obj.getString("User").equals("2"))
+                    {
+                        String path = "card" + newCard.toString();
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        userTwoImages.get(userTwoCount).setImageResource(imageCard);
+                        userTwoCount++;
+                    }
+                    else
+                    {
+                        String path = "card" + newCard.toString();
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        dealerImages.get(dealerCount).setImageResource(imageCard);
+                        dealerCount++;
+                    }
                 }
             }
         }
