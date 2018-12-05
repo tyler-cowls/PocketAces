@@ -65,6 +65,7 @@ public class NertsActivity extends SampleActivityBase {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         BluetoothChatFragment fragment = new BluetoothChatFragment();
+        fragment.setTestText((TextView)findViewById(R.id.testText));
         transaction.replace(R.id.sample_content_fragment, fragment);
         transaction.commit();
 

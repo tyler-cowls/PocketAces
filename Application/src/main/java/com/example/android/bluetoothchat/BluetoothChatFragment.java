@@ -60,7 +60,6 @@ public class BluetoothChatFragment extends Fragment {
     private ListView mConversationView;
     private EditText mOutEditText;
     private Button mSendButton;
-    private TextView testText;
 
     /**
      * Name of the connected device
@@ -86,6 +85,13 @@ public class BluetoothChatFragment extends Fragment {
      * Member object for the chat services
      */
     private BluetoothChatService mChatService = null;
+
+    private TextView testText = null;
+
+    public void setTestText(TextView temp)
+    {
+        this.testText = temp;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -152,7 +158,6 @@ public class BluetoothChatFragment extends Fragment {
         mConversationView = (ListView) view.findViewById(R.id.in);
         mOutEditText = (EditText) view.findViewById(R.id.edit_text_out);
         mSendButton = (Button) view.findViewById(R.id.button_send);
-        testText = (TextView) view.findViewById(R.id.testText);
     }
 
     /**
@@ -177,6 +182,7 @@ public class BluetoothChatFragment extends Fragment {
                 if (null != view) {
                     TextView textView = (TextView) view.findViewById(R.id.edit_text_out);
                     String message = textView.getText().toString();
+                    testText.setText(message);
                     sendMessage(message);
                 }
             }
