@@ -10,8 +10,9 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Button;
-import java.util.Random;
+import static android.os.SystemClock.sleep;
 import java.util.concurrent.atomic.AtomicInteger;
+
 
 import com.example.android.common.activities.SampleActivityBase;
 
@@ -123,49 +124,44 @@ public class BlackjackActivity extends SampleActivityBase {
             TextView textResult1 = findViewById(R.id.result1);
             TextView textResult2 = findViewById(R.id.result2);
 
-            TextView testText = findViewById(R.id.testText);
-            String testOut = "";
-
             //Initial hand set up
             Card someCard = deck.deal();
             JSONObject sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
-            testOut = testOut + someCard.toString();
+            sleep(100);
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            testOut = testOut + someCard.toString();
+            sleep(100);
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "3");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             dealer.addCard(someCard);
-            testOut = testOut + someCard.toString();
+            sleep(100);
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
-            testOut = testOut + someCard.toString();
+            sleep(100);
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            testOut = testOut + someCard.toString();
+            sleep(100);
 
             someCard = deck.deal();
             dealer.addCard(someCard);
-
-            testText.setText(testOut);
 
             dealer.showOne();
             userOne.toImage();
