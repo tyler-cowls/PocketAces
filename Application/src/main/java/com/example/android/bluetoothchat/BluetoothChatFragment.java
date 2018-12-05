@@ -107,6 +107,7 @@ public class BluetoothChatFragment extends Fragment {
     private AtomicInteger userTwoScore;
 
     private AtomicInteger otherRandNum;
+    private AtomicInteger curState;
 
     ArrayList<ImageView> dealerImages;
     ArrayList<ImageView> userOneImages;
@@ -119,6 +120,8 @@ public class BluetoothChatFragment extends Fragment {
     BlackjackActivity table = null;
     int packetsReceived = 0;
 
+
+
     public void setBJActivity(BlackjackActivity temp)
     {
         table = temp;
@@ -130,7 +133,10 @@ public class BluetoothChatFragment extends Fragment {
         {
             otherRandNum = temp;
         }
-
+        else if(i == 2)
+        {
+            curState = temp;
+        }
     }
 
     public void setBJViews(ArrayList<ImageView> temp, int i)
@@ -640,15 +646,15 @@ public class BluetoothChatFragment extends Fragment {
                     {
                         String path = "card" + newCard.toString();
                         int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
-                        userOneImages.get(userOneCount).setImageResource(imageCard);
-                        userOneCount++;
+                        userTwoImages.get(userTwoCount).setImageResource(imageCard);
+                        userTwoCount++;
                     }
                     else if(obj.getString("User").equals("2"))
                     {
                         String path = "card" + newCard.toString();
                         int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
-                        userTwoImages.get(userTwoCount).setImageResource(imageCard);
-                        userTwoCount++;
+                        userOneImages.get(userOneCount).setImageResource(imageCard);
+                        userOneCount++;
                     }
                     else
                     {
@@ -656,6 +662,62 @@ public class BluetoothChatFragment extends Fragment {
                         int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
                         dealerImages.get(dealerCount).setImageResource(imageCard);
                         dealerCount++;
+                    }
+                }
+                else if(obj.getString("State").equals("1"))
+                {
+                    curState.set(1);
+
+                    if(!obj.getString("Card").equals(""))
+                    {
+                        String path = "card" + obj.getString("Card");
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        userTwoImages.get(userTwoCount).setImageResource(imageCard);
+                        userTwoCount++;
+                    }
+                    else if(obj.getString("HitOrStay").equals("Stay"))
+                    {
+                        int temp = curState.get();
+                        temp++;
+                        curState.set(temp);
+                    }
+                }
+                else if(obj.getString("State").equals("2"))
+                {
+                    if(obj.getString("HitOrStay").equals("Hit"))
+                    {
+                        table.hitUserTwo();
+                    }
+                    else if(obj.getString("HitOrStay").equals("Stay"))
+                    {
+                        int temp = curState.get();
+                        temp++;
+                        curState.set(temp);
+                        table.dealerPlay();
+                    }
+                    else if(!obj.getString("Card").equals(""))
+                    {
+                        String path = "card" + obj.getString("Card");
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        userOneImages.get(userOneCount).setImageResource(imageCard);
+                        userOneCount++;
+                    }
+                }
+                else if(obj.getString("State").equals("3"))
+                {
+                    curState.set(3);
+
+                    if(!obj.getString("Card").equals(""))
+                    {
+                        String path = "card" + obj.getString("Card");
+                        int imageCard = table.getResources().getIdentifier(path, "drawable", table.getPackageName());
+                        dealerImages.get(dealerCount).setImageResource(imageCard);
+                        dealerCount++;
+                    }
+                    else if(!obj.getString("Name").equals(""))
+                    {
+                        table.setUserValues(Integer.parseInt(obj.getString("Name")), Integer.parseInt(obj.getString("User")), Integer.parseInt(obj.getString("HitOrStay")));
+                        table.displayWinner();
                     }
                 }
             }

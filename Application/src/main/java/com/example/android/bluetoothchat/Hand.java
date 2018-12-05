@@ -10,6 +10,7 @@ class Hand
     private ArrayList<ImageView> images;
     private BlackjackActivity table;
     private int count;
+    private int userScore;
 
     Hand(ArrayList<ImageView> images, BlackjackActivity table)
     {
@@ -17,13 +18,19 @@ class Hand
         this.images = images;
         this.table = table;
         count = 0;
+        userScore = -1;
     }
     
     public void addCard(Card card)
     {
         hand.add(card);
     }
-    
+
+    public void setValue(int i)
+    {
+        userScore = i;
+    }
+
     public int getValue()
     {
         int val = 0;
@@ -53,7 +60,12 @@ class Hand
                 val += 11;
             }
         }
-        
+
+        if(userScore != -1)
+        {
+            val = userScore;
+        }
+
         return val;
     }
   
@@ -111,5 +123,10 @@ class Hand
         }
         count = hand.size();
     }
-    
+
+    public Card getCard(int index)
+    {
+        return hand.get(index);
+    }
+
 }
