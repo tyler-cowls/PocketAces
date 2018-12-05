@@ -41,6 +41,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 import com.example.android.common.logger.Log;
 
@@ -86,11 +89,50 @@ public class BluetoothChatFragment extends Fragment {
      */
     private BluetoothChatService mChatService = null;
 
-    private TextView testText = null;
+    private FoundationPile fOne;
+    private FoundationPile fTwo;
+    private FoundationPile fThree;
+    private FoundationPile fFour;
+    private FoundationPile fFive;
+    private FoundationPile fSix;
+    private FoundationPile fSeven;
+    private FoundationPile fEight;
 
-    public void setTestText(TextView temp)
+    public void setFoundations(FoundationPile pile, int i)
     {
-        this.testText = temp;
+        if(i == 1)
+        {
+            fOne = pile;
+        }
+        else if(i == 2)
+        {
+            fTwo = pile;
+        }
+        else if(i == 3)
+        {
+            fThree = pile;
+        }
+        else if(i == 4)
+        {
+            fFour = pile;
+        }
+        else if(i == 5)
+        {
+            fFive = pile;
+        }
+        else if(i == 6)
+        {
+            fSix = pile;
+        }
+        else if(i == 7)
+        {
+            fSeven = pile;
+        }
+        else if(i == 8)
+        {
+            fEight = pile;
+        }
+
     }
 
     @Override
@@ -182,7 +224,6 @@ public class BluetoothChatFragment extends Fragment {
                 if (null != view) {
                     TextView textView = (TextView) view.findViewById(R.id.edit_text_out);
                     String message = textView.getText().toString();
-                    testText.setText(message);
                     sendMessage(message);
                 }
             }
@@ -313,7 +354,7 @@ public class BluetoothChatFragment extends Fragment {
                     byte[] readBuf = (byte[]) msg.obj;
                     // construct a string from the valid bytes in the buffer
                     String readMessage = new String(readBuf, 0, msg.arg1);
-                    testText.setText(readMessage);
+                    processJSON(readMessage);
                     mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:
@@ -406,6 +447,93 @@ public class BluetoothChatFragment extends Fragment {
             }
         }
         return false;
+    }
+
+    private void processJSON(String message)
+    {
+        try
+        {
+            JSONObject obj = new JSONObject(message);
+            if(obj.getString("Game").equals("Nertz"))
+            {
+                if(obj.getString("Pile").equals("1"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fOne.addCard(newCard);
+                    fOne.showTop();
+                }
+                else if(obj.getString("Pile").equals("2"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fTwo.addCard(newCard);
+                    fTwo.showTop();
+                }
+                else if(obj.getString("Pile").equals("3"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fThree.addCard(newCard);
+                    fThree.showTop();
+                }
+                else if(obj.getString("Pile").equals("4"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fFour.addCard(newCard);
+                    fFour.showTop();
+                }
+                else if(obj.getString("Pile").equals("5"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fFive.addCard(newCard);
+                    fFive.showTop();
+                }
+                else if(obj.getString("Pile").equals("6"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fSix.addCard(newCard);
+                    fSix.showTop();
+                }
+                else if(obj.getString("Pile").equals("7"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fSeven.addCard(newCard);
+                    fSeven.showTop();
+                }
+                else if(obj.getString("Pile").equals("8"))
+                {
+                    int card = Integer.parseInt(obj.getString("Card"));
+                    int suit = card / 13;
+                    int face = card - (suit * 13);
+                    Card newCard = new Card(face, suit, 0);
+                    fEight.addCard(newCard);
+                    fEight.showTop();
+                }
+            }
+        }
+        catch (JSONException e)
+        {
+
+        }
     }
 
 }
