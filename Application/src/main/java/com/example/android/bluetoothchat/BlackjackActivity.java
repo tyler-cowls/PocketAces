@@ -118,9 +118,19 @@ public class BlackjackActivity extends SampleActivityBase {
     {
         if(otherRandNum.get() < myRandNum)
         {
+            Intent intent = getIntent();
+            String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+            TextView textViewTurn = findViewById(R.id.textViewTurn);
+            TextView textResult1 = findViewById(R.id.result1);
+            TextView textResult2 = findViewById(R.id.result2);
+
+            Button mSendButton = (Button) findViewById(R.id.button_send);
+            TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
             //Initial hand set up
             Card someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
+            JSONObject sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
