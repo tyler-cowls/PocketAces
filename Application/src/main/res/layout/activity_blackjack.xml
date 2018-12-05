@@ -568,6 +568,14 @@
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
+    <FrameLayout
+        android:id="@+id/sample_content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteY="500dp" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
