@@ -406,7 +406,7 @@ public class BluetoothChatFragment extends Fragment {
                             setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
                             mConversationArrayAdapter.clear();
                             if(table != null) {
-                                table.randNumSend();
+                                table.nameSend();
                             }
                             break;
                         case BluetoothChatService.STATE_CONNECTING:
@@ -431,7 +431,7 @@ public class BluetoothChatFragment extends Fragment {
                     packetsReceived++;
                     if(table != null && packetsReceived == 1)
                     {
-                        table.tableInit();
+                        table.tableInit(readMessage);
                     }
                     else
                     {
@@ -635,11 +635,7 @@ public class BluetoothChatFragment extends Fragment {
             }
             else
             {
-                if(!obj.getString("RandNum").equals(""))
-                {
-                    otherRandNum.set(Integer.parseInt(obj.getString("RandNum")));
-                }
-                else if(obj.getString("State").equals("0"))
+                if(obj.getString("State").equals("0"))
                 {
                     int card = Integer.parseInt(obj.getString("Card"));
                     int suit = card / 13;
