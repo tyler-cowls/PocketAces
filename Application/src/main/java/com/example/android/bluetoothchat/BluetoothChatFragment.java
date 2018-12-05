@@ -573,6 +573,7 @@ public class BluetoothChatFragment extends Fragment {
                 else if(obj.getString("Nertz").equals("1"))
                 {
                     userTwoNerts.set(1);
+                    userTwoScore.set(Integer.parseInt(obj.getString("Score")));
                 }
             }
         }
