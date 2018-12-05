@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import android.view.View;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import java.util.concurrent.atomic.AtomicInteger;
 import com.example.android.common.activities.SampleActivityBase;
 
 public class NertsActivity extends SampleActivityBase {
@@ -32,13 +32,10 @@ public class NertsActivity extends SampleActivityBase {
     FoundationPile fSeven;
     FoundationPile fEight;
 
-    Button mSendButton;
-    TextView sendText;
-/*
-    Integer userTwoStuck = new Integer(0);
-    Integer userTwoDone = new Integer(0);
-    Integer userTwoNerts = new Integer(0);
-*/
+    AtomicInteger userTwoStuck = new AtomicInteger(0);
+    AtomicInteger userTwoDone = new AtomicInteger(0);
+    AtomicInteger userTwoNerts = new AtomicInteger(0);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,9 +69,6 @@ public class NertsActivity extends SampleActivityBase {
         userOne.getWorkFour().showTop();
         userOne.getNerts().showTop();
 
-        mSendButton = (Button) findViewById(R.id.button_send);
-        sendText = (TextView) findViewById(R.id.edit_text_out);
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         BluetoothChatFragment fragment = new BluetoothChatFragment();
         fragment.setFoundations(fOne, 1);
@@ -85,11 +79,9 @@ public class NertsActivity extends SampleActivityBase {
         fragment.setFoundations(fSix, 6);
         fragment.setFoundations(fSeven, 7);
         fragment.setFoundations(fEight, 8);
-        /*
         fragment.setNertzBooleans(userTwoStuck, 1);
         fragment.setNertzBooleans(userTwoDone, 2);
         fragment.setNertzBooleans(userTwoNerts, 3);
-        */
         transaction.replace(R.id.sample_content_fragment, fragment);
         transaction.commit();
 
@@ -97,7 +89,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressStock(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -127,7 +119,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWaste(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -157,7 +149,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkOne(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -203,7 +195,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkTwo(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -249,7 +241,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkThree(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -295,7 +287,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkFour(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -341,7 +333,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundOne(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -395,7 +390,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundTwo(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -449,7 +447,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundThree(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -503,7 +504,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundFour(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -557,7 +561,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundFive(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -611,7 +618,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundSix(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -665,7 +675,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundSeven(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -719,7 +732,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressFoundEight(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -774,7 +790,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressNerts(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -794,7 +810,10 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressStuck(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
+        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -821,6 +840,9 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressDone(View view)
     {
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView sendText = (TextView) findViewById(R.id.edit_text_out);
+
         if(userOne.isDone())
         {
             userOne.setDone(false);
@@ -839,7 +861,7 @@ public class NertsActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
 
-            if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
+            if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
             {
                 displayEnd();
             }

@@ -43,7 +43,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.example.android.common.logger.Log;
 
@@ -97,12 +97,12 @@ public class BluetoothChatFragment extends Fragment {
     private FoundationPile fSix;
     private FoundationPile fSeven;
     private FoundationPile fEight;
-/*
-    private Integer userTwoStuck;
-    private Integer userTwoDone;
-    private Integer userTwoNerts;
 
-    public void setNertzBooleans(Integer temp, int i)
+    private AtomicInteger userTwoStuck;
+    private AtomicInteger userTwoDone;
+    private AtomicInteger userTwoNerts;
+
+    public void setNertzBooleans(AtomicInteger temp, int i)
     {
         if(i == 1)
         {
@@ -117,7 +117,7 @@ public class BluetoothChatFragment extends Fragment {
             userTwoNerts = temp;
         }
     }
-*/
+
     public void setFoundations(FoundationPile pile, int i)
     {
         if(i == 1)
@@ -548,24 +548,26 @@ public class BluetoothChatFragment extends Fragment {
                     fEight.addCard(newCard);
                     fEight.showTop();
                 }
-                /*
                 else if(obj.getString("Stuck").equals("1"))
                 {
-                    userTwoStuck
+                    userTwoStuck.set(1);
                 }
                 else if(obj.getString("Stuck").equals("0"))
                 {
-
+                    userTwoStuck.set(0);
                 }
                 else if(obj.getString("Done").equals("1"))
                 {
-
+                    userTwoDone.set(1);
                 }
                 else if(obj.getString("Done").equals("0"))
                 {
-
+                    userTwoDone.set(0);
                 }
-                */
+                else if(obj.getString("Nertz").equals("1"))
+                {
+                    userTwoNerts.set(1);
+                }
             }
         }
         catch (JSONException e)
