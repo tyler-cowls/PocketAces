@@ -108,9 +108,9 @@ public class BluetoothChatFragment extends Fragment {
 
     private AtomicInteger otherRandNum;
 
-    ArrayList<ImageView> dealerImages = new ArrayList<ImageView>();
-    ArrayList<ImageView> userOneImages = new ArrayList<ImageView>();
-    ArrayList<ImageView> userTwoImages = new ArrayList<ImageView>();
+    ArrayList<ImageView> dealerImages;
+    ArrayList<ImageView> userOneImages;
+    ArrayList<ImageView> userTwoImages;
 
     int dealerCount = 0;
     int userOneCount = 0;
@@ -405,7 +405,8 @@ public class BluetoothChatFragment extends Fragment {
                         case BluetoothChatService.STATE_CONNECTED:
                             setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
                             mConversationArrayAdapter.clear();
-                            if(table != null) {
+                            if(table != null)
+                            {
                                 table.nameSend();
                             }
                             break;
@@ -428,15 +429,7 @@ public class BluetoothChatFragment extends Fragment {
                     byte[] readBuf = (byte[]) msg.obj;
                     // construct a string from the valid bytes in the buffer
                     String readMessage = new String(readBuf, 0, msg.arg1);
-                    packetsReceived++;
-                    if(table != null && packetsReceived == 1)
-                    {
-                        table.tableInit(readMessage);
-                    }
-                    else
-                    {
-                        processJSON(readMessage);
-                    }
+                    processJSON(readMessage);
                     mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:
@@ -633,7 +626,7 @@ public class BluetoothChatFragment extends Fragment {
                     userTwoScore.set(Integer.parseInt(obj.getString("Score")));
                 }
             }
-            else
+            else if(obj.getString("Game").equals("Blackjack"))
             {
                 if(obj.getString("State").equals("0"))
                 {
