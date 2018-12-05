@@ -124,7 +124,7 @@ public class BlackjackActivity extends SampleActivityBase {
             TextView textResult2 = findViewById(R.id.result2);
 
             TextView testText = findViewById(R.id.testText);
-            testText.setText("MASTER");
+            String testOut = "";
 
             //Initial hand set up
             Card someCard = deck.deal();
@@ -132,33 +132,40 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
+            testOut = testOut + someCard.toString();
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
+            testOut = testOut + someCard.toString();
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "3");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             dealer.addCard(someCard);
+            testOut = testOut + someCard.toString();
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
+            testOut = testOut + someCard.toString();
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
+            testOut = testOut + someCard.toString();
 
             someCard = deck.deal();
             dealer.addCard(someCard);
+
+            testText.setText(testOut);
 
             dealer.showOne();
             userOne.toImage();
