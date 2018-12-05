@@ -733,6 +733,15 @@
         android:visibility="invisible"
         tools:layout_editor_absoluteY="500dp" />
 
+    <TextView
+        android:id="@+id/testText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="149dp" />
+
     <!--
         <ImageView
             android:id="@+id/imageView"
