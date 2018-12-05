@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/Users/Tyler/PocketAces/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\27aebc5fe2d7b9acd39d512edfc6bf00\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,24 @@
                     }
                 },
                 {
-                    "source": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "source": "/Users/Tyler/PocketAces/Application/src/main/res/values-sw600dp/template-dimens.xml",
+                    "from": {
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "656,724",
+                        "endColumns": "67,67",
+                        "endOffsets": "719,787"
+                    },
+                    "to": {
+                        "startLines": "10,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "611,679",
+                        "endColumns": "67,67",
+                        "endOffsets": "674,742"
+                    }
+                },
+                {
+                    "source": "/Users/Tyler/PocketAces/Application/src/main/res/values-sw600dp/template-styles.xml",
                     "from": {
                         "startLines": "18",
                         "startColumns": "4",
@@ -30,23 +47,6 @@
                         "endLines": "16",
                         "endColumns": "12",
                         "endOffsets": "987"
-                    }
-                },
-                {
-                    "source": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
-                    "from": {
-                        "startLines": "20,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "656,724",
-                        "endColumns": "67,67",
-                        "endOffsets": "719,787"
-                    },
-                    "to": {
-                        "startLines": "10,11",
-                        "startColumns": "4,4",
-                        "startOffsets": "611,679",
-                        "endColumns": "67,67",
-                        "endOffsets": "674,742"
                     }
                 }
             ]

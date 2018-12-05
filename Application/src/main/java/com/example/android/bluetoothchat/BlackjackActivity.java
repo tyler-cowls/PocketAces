@@ -1,5 +1,6 @@
 package com.example.android.bluetoothchat;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -11,7 +12,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class BlackjackActivity extends AppCompatActivity {
+public class BlackjackActivity extends Activity {
 
     int curState = 0;
     ArrayList<ImageView> dealerImages = new ArrayList<ImageView>();

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "outputFile": "/Users/Tyler/PocketAces/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\27aebc5fe2d7b9acd39d512edfc6bf00\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

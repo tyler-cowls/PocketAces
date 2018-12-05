@@ -1,110 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="28"
-    build-mode="FULL"
-    density="420dpi"
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    build-mode="COLD"
+    density="xxhdpi"
     format="10"
+    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.2.1"
-    timestamp="1543971181636"
-    token="5143786115354427891"
-    verifier="FULL_BUILD_REQUESTED" >
+    timestamp="1543977102470"
+    token="-7723923529904245294"
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="363" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="5567" />
+        duration="28" />
     <task
         name="verifier"
-        duration="0" />
+        duration="9" />
 
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_1.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-apk/debug/Application-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1543971181636"
+        timestamp="1543976859441"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-apk/debug/Application-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1543977102470"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\PocketAces_bluetooth-master\PocketAces_bluetooth-master\android-BluetoothChat-master\Application\build\intermediates\instant-run-apk\debug\Application-debug.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-apk/debug/Application-debug.apk"
             type="SPLIT_MAIN" />
     </build>
 

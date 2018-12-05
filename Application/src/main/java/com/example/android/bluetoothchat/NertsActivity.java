@@ -1,5 +1,6 @@
 package com.example.android.bluetoothchat;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 import android.widget.ImageButton;
 import android.view.View;
 
-public class NertsActivity extends AppCompatActivity {
+public class NertsActivity extends Activity {
 
     ImageButton curPressed;
     int isPressed = 0;

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "/Users/Tyler/PocketAces/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\27aebc5fe2d7b9acd39d512edfc6bf00\\res\\values-v23\\values-v23.xml",
+                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-27.0.2.aar\\0e0568943d648be69866c3d1cf4482f8\\res\\values-v23\\values-v23.xml",
+                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.2.aar/ab7efe2822614ce118207c1de5b10917/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
