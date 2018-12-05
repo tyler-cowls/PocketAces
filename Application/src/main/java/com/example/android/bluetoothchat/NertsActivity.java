@@ -32,8 +32,8 @@ public class NertsActivity extends SampleActivityBase {
     FoundationPile fSeven;
     FoundationPile fEight;
 
-    Button mSendButton = (Button) findViewById(R.id.button_send);
-    TextView textView = (TextView) findViewById(R.id.edit_text_out);
+    Button mSendButton;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +67,9 @@ public class NertsActivity extends SampleActivityBase {
         userOne.getWorkThree().showTop();
         userOne.getWorkFour().showTop();
         userOne.getNerts().showTop();
+
+        mSendButton = (Button) findViewById(R.id.button_send);
+        textView = (TextView) findViewById(R.id.edit_text_out);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         BluetoothChatFragment fragment = new BluetoothChatFragment();
