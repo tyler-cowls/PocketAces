@@ -272,8 +272,6 @@ public class BlackjackActivity extends SampleActivityBase {
         {
             JSONObject obj = new JSONObject(someMessage);
             String otherName = obj.getString("Name");
-            TextView tempView = findViewById(R.id.testText);
-            tempView.setText("Received:" + otherName + " mine:" + myName);
 
             if(myName.compareTo(otherName) < 0)
             {
