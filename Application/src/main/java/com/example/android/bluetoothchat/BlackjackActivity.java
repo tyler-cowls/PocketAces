@@ -139,7 +139,7 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            sleep(200);
+            sleep(500);
             Log.d("blackjack_test", "sending " + someCard.toString());
 
 
@@ -148,7 +148,7 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             dealer.addCard(someCard);
-            sleep(200);
+            sleep(500);
             Log.d("blackjack_test", "sending " + someCard.toString());
 
             someCard = deck.deal();
@@ -156,7 +156,7 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
-            sleep(200);
+            sleep(500);
             Log.d("blackjack_test", "sending " + someCard.toString());
 
             someCard = deck.deal();
