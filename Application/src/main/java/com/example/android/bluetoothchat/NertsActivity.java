@@ -2,6 +2,7 @@ package com.example.android.bluetoothchat;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
@@ -10,7 +11,13 @@ import android.widget.TextView;
 import android.widget.ImageButton;
 import android.view.View;
 
-public class NertsActivity extends Activity {
+import com.example.android.common.activities.SampleActivityBase;
+import com.example.android.common.logger.Log;
+import com.example.android.common.logger.LogFragment;
+import com.example.android.common.logger.LogWrapper;
+import com.example.android.common.logger.MessageOnlyLogFilter;
+
+public class NertsActivity extends SampleActivityBase {
 
     ImageButton curPressed;
     int isPressed = 0;
@@ -58,6 +65,12 @@ public class NertsActivity extends Activity {
         userOne.getWorkThree().showTop();
         userOne.getWorkFour().showTop();
         userOne.getNerts().showTop();
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        BluetoothChatFragment fragment = new BluetoothChatFragment();
+        transaction.replace(R.id.sample_content_fragment, fragment);
+        transaction.commit();
+
     }
 
     public void pressStock(View view)

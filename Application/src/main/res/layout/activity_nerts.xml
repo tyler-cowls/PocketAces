@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="false"
         android:scaleType="fitXY"
+        android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -97,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -131,6 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -165,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -198,6 +203,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -231,6 +237,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -264,6 +271,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -297,6 +305,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -331,6 +340,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -365,6 +375,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -399,6 +410,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -434,6 +446,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -468,6 +481,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -482,6 +496,7 @@
             android:onClick="pressStock"
             android:padding="8dp"
             android:scaleType="fitXY"
+            android:src="@drawable/blue_back_bicycle"
             app:srcCompat="@drawable/blue_back_bicycle" />
     </RelativeLayout>
 
@@ -503,6 +518,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -537,6 +553,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -707,6 +724,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/sample_content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteY="500dp" />
 
     <!--
         <ImageView

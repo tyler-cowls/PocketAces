@@ -112,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
+            android:src="@drawable/card_dock"
             app:srcCompat="@drawable/card_dock" />
 
         <ImageButton
@@ -125,6 +126,7 @@
             android:background="@android:color/transparent"
             android:padding="8dp"
             android:scaleType="fitXY"
+            android:src="@drawable/blue_back_bicycle"
             app:srcCompat="@drawable/blue_back_bicycle" />
     </RelativeLayout>
 
