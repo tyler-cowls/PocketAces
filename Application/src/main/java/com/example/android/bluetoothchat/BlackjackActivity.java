@@ -116,6 +116,8 @@ public class BlackjackActivity extends SampleActivityBase {
 
     public void tableInit()
     {
+        TextView tempView = findViewById(R.id.testText);
+        tempView.setText("Received:" + otherRandNum.get() + " mine:" + myRandNum);
         if(otherRandNum.get() < myRandNum)
         {
             Intent intent = getIntent();

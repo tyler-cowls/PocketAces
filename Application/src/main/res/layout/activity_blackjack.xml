@@ -236,6 +236,19 @@
             android:layout_marginLeft="270dp"
             app:srcCompat="@drawable/background" />
 
+        <TextView
+            android:id="@+id/testText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="213dp"
+            android:layout_marginLeft="213dp"
+            android:layout_marginTop="38dp"
+            android:text="TextView"
+            android:textSize="30sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
