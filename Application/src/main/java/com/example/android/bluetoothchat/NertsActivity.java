@@ -6,16 +6,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageButton;
 import android.view.View;
 
 import com.example.android.common.activities.SampleActivityBase;
-import com.example.android.common.logger.Log;
-import com.example.android.common.logger.LogFragment;
-import com.example.android.common.logger.LogWrapper;
-import com.example.android.common.logger.MessageOnlyLogFilter;
 
 public class NertsActivity extends SampleActivityBase {
 
@@ -747,6 +744,11 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressStuck(View view)
     {
+        Button mSendButton = (Button) findViewById(R.id.button_send);
+        TextView textView = (TextView) findViewById(R.id.edit_text_out);
+        textView.setText("HELLO");
+        mSendButton.performClick();
+
         if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))
         {
             displayEnd();
