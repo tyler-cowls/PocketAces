@@ -128,39 +128,36 @@ public class BlackjackActivity extends SampleActivityBase {
 
             //Initial hand set up
             Card someCard = deck.deal();
-            JSONObject sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
+            JSONObject sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
 
             someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "2");
+            sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
 
             someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "3");
+            sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "3");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             dealer.addCard(someCard);
 
             someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "1");
+            sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
 
             someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "2");
+            sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
 
             someCard = deck.deal();
-            sendPacket = makeJSON("Blackjack", "", "0", "" + someCard.toString(), "", "3");
-            sendText.setText(sendPacket.toString());
-            mSendButton.performClick();
             dealer.addCard(someCard);
 
             dealer.showOne();
