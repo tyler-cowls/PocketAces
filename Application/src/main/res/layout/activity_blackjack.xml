@@ -465,6 +465,20 @@
         app:layout_constraintStart_toStartOf="@+id/result1"
         app:layout_constraintTop_toTopOf="@+id/background_table" />
 
+    <TextView
+        android:id="@+id/result1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="TextView"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/p1Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/p1Layout" />
+
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
@@ -482,15 +496,15 @@
         android:id="@+id/result2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="TextView"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/p2Layout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/p2Layout" />
 
     <View
         android:id="@+id/view3"
