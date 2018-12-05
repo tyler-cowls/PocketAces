@@ -33,8 +33,7 @@ class NertsPlayer
         this.workFour.addCard(deck.deal());
 
         this.nerts = new Pile(nerts, table);
-        // ==================================== TEMPORARILY SET i = 1 for testing =======================================================
-        for(int i = 0; i < 1; i++)
+        for(int i = 0; i < 13; i++)
         {
             this.nerts.addCard(deck.deal());
         }
