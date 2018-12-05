@@ -33,8 +33,12 @@ public class NertsActivity extends SampleActivityBase {
     FoundationPile fEight;
 
     Button mSendButton;
-    TextView textView;
-
+    TextView sendText;
+/*
+    Integer userTwoStuck = new Integer(0);
+    Integer userTwoDone = new Integer(0);
+    Integer userTwoNerts = new Integer(0);
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +73,7 @@ public class NertsActivity extends SampleActivityBase {
         userOne.getNerts().showTop();
 
         mSendButton = (Button) findViewById(R.id.button_send);
-        textView = (TextView) findViewById(R.id.edit_text_out);
+        sendText = (TextView) findViewById(R.id.edit_text_out);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         BluetoothChatFragment fragment = new BluetoothChatFragment();
@@ -81,6 +85,11 @@ public class NertsActivity extends SampleActivityBase {
         fragment.setFoundations(fSix, 6);
         fragment.setFoundations(fSeven, 7);
         fragment.setFoundations(fEight, 8);
+        /*
+        fragment.setNertzBooleans(userTwoStuck, 1);
+        fragment.setNertzBooleans(userTwoDone, 2);
+        fragment.setNertzBooleans(userTwoNerts, 3);
+        */
         transaction.replace(R.id.sample_content_fragment, fragment);
         transaction.commit();
 
@@ -378,7 +387,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "1", fOne.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fOne.showTop();
         }
@@ -432,7 +441,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "2", fTwo.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fTwo.showTop();
         }
@@ -486,7 +495,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "3", fThree.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fThree.showTop();
         }
@@ -540,7 +549,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "4", fFour.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fFour.showTop();
         }
@@ -594,7 +603,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "5", fFive.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fFive.showTop();
         }
@@ -648,7 +657,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "6", fSix.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fSix.showTop();
         }
@@ -702,7 +711,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
             JSONObject sendPacket = makeJSON("Nertz", "", "", "7", fSeven.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fSeven.showTop();
         }
@@ -757,7 +766,7 @@ public class NertsActivity extends SampleActivityBase {
             }
 
             JSONObject sendPacket = makeJSON("Nertz", "", "", "8", fEight.getTop().toString(), "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fEight.showTop();
         }
@@ -796,7 +805,7 @@ public class NertsActivity extends SampleActivityBase {
             findViewById(R.id.stuckButton).setBackgroundColor(0xFF008577);
             //TODO: Finish
             JSONObject sendPacket = makeJSON("Nertz", "", "0", "", "", "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
         else
@@ -805,7 +814,7 @@ public class NertsActivity extends SampleActivityBase {
             findViewById(R.id.stuckButton).setBackgroundColor(0xFF00574B);
             //TODO: Finish
             JSONObject sendPacket = makeJSON("Nertz", "", "1", "", "", "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
     }
@@ -818,7 +827,7 @@ public class NertsActivity extends SampleActivityBase {
             findViewById(R.id.doneButton).setBackgroundColor(0xFF008577);
             //TODO: Finish
             JSONObject sendPacket = makeJSON("Nertz", "0", "", "", "", "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
         else
@@ -827,7 +836,7 @@ public class NertsActivity extends SampleActivityBase {
             findViewById(R.id.doneButton).setBackgroundColor(0xFF00574B);
             //TODO: Finish
             JSONObject sendPacket = makeJSON("Nertz", "1", "", "", "", "");
-            textView.setText(sendPacket.toString());
+            sendText.setText(sendPacket.toString());
             mSendButton.performClick();
 
             if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && userTwo.isDone()))

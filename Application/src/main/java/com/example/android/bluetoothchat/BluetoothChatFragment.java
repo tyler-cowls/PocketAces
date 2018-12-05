@@ -97,7 +97,27 @@ public class BluetoothChatFragment extends Fragment {
     private FoundationPile fSix;
     private FoundationPile fSeven;
     private FoundationPile fEight;
+/*
+    private Integer userTwoStuck;
+    private Integer userTwoDone;
+    private Integer userTwoNerts;
 
+    public void setNertzBooleans(Integer temp, int i)
+    {
+        if(i == 1)
+        {
+            userTwoStuck = temp;
+        }
+        else if(i == 2)
+        {
+            userTwoDone = temp;
+        }
+        else if(i == 3)
+        {
+            userTwoNerts = temp;
+        }
+    }
+*/
     public void setFoundations(FoundationPile pile, int i)
     {
         if(i == 1)
@@ -528,6 +548,24 @@ public class BluetoothChatFragment extends Fragment {
                     fEight.addCard(newCard);
                     fEight.showTop();
                 }
+                /*
+                else if(obj.getString("Stuck").equals("1"))
+                {
+                    userTwoStuck
+                }
+                else if(obj.getString("Stuck").equals("0"))
+                {
+
+                }
+                else if(obj.getString("Done").equals("1"))
+                {
+
+                }
+                else if(obj.getString("Done").equals("0"))
+                {
+
+                }
+                */
             }
         }
         catch (JSONException e)
