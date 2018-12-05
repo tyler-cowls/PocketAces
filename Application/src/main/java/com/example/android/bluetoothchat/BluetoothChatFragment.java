@@ -101,6 +101,7 @@ public class BluetoothChatFragment extends Fragment {
     private AtomicInteger userTwoStuck;
     private AtomicInteger userTwoDone;
     private AtomicInteger userTwoNerts;
+    private AtomicInteger userTwoScore;
 
     public void setNertzBooleans(AtomicInteger temp, int i)
     {
@@ -115,6 +116,10 @@ public class BluetoothChatFragment extends Fragment {
         else if(i == 3)
         {
             userTwoNerts = temp;
+        }
+        else if(i == 4)
+        {
+            userTwoScore = temp;
         }
     }
 
@@ -559,6 +564,7 @@ public class BluetoothChatFragment extends Fragment {
                 else if(obj.getString("Done").equals("1"))
                 {
                     userTwoDone.set(1);
+                    userTwoScore.set(Integer.parseInt(obj.getString("Score")));
                 }
                 else if(obj.getString("Done").equals("0"))
                 {

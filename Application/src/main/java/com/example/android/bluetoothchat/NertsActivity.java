@@ -35,6 +35,7 @@ public class NertsActivity extends SampleActivityBase {
     AtomicInteger userTwoStuck = new AtomicInteger(0);
     AtomicInteger userTwoDone = new AtomicInteger(0);
     AtomicInteger userTwoNerts = new AtomicInteger(0);
+    AtomicInteger userTwoScore = new AtomicInteger(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,7 @@ public class NertsActivity extends SampleActivityBase {
         fragment.setNertzBooleans(userTwoStuck, 1);
         fragment.setNertzBooleans(userTwoDone, 2);
         fragment.setNertzBooleans(userTwoNerts, 3);
+        fragment.setNertzBooleans(userTwoScore, 4);
         transaction.replace(R.id.sample_content_fragment, fragment);
         transaction.commit();
 
@@ -89,7 +91,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressStock(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -119,7 +121,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWaste(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -149,7 +151,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkOne(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -195,7 +197,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkTwo(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -241,7 +243,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkThree(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -287,7 +289,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressWorkFour(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -336,7 +338,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -381,7 +383,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fOne, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "1", fOne.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "1", fOne.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fOne.showTop();
@@ -393,7 +395,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -438,7 +440,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fTwo, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "2", fTwo.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "2", fTwo.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fTwo.showTop();
@@ -450,7 +452,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -495,7 +497,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fThree, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "3", fThree.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "3", fThree.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fThree.showTop();
@@ -507,7 +509,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -552,7 +554,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fFour, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "4", fFour.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "4", fFour.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fFour.showTop();
@@ -564,7 +566,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -609,7 +611,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fFive, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "5", fFive.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "5", fFive.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fFive.showTop();
@@ -621,7 +623,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -666,7 +668,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fSix, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "6", fSix.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "6", fSix.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fSix.showTop();
@@ -678,7 +680,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -723,7 +725,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.addCardToFoundation(fSeven, userOne.getWorkFour());
                 userOne.getWorkFour().showTop();
             }
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "7", fSeven.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "7", fSeven.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fSeven.showTop();
@@ -735,7 +737,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -781,7 +783,7 @@ public class NertsActivity extends SampleActivityBase {
                 userOne.getWorkFour().showTop();
             }
 
-            JSONObject sendPacket = makeJSON("Nertz", "", "", "8", fEight.getTop().toString(), "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "", "8", fEight.getTop().toString(), "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             fEight.showTop();
@@ -790,7 +792,7 @@ public class NertsActivity extends SampleActivityBase {
 
     public void pressNerts(View view)
     {
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -813,7 +815,7 @@ public class NertsActivity extends SampleActivityBase {
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
 
-        if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+        if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
         {
             displayEnd();
         }
@@ -823,7 +825,7 @@ public class NertsActivity extends SampleActivityBase {
             userOne.setStuck(false);
             findViewById(R.id.stuckButton).setBackgroundColor(0xFF008577);
             //TODO: Finish
-            JSONObject sendPacket = makeJSON("Nertz", "", "0", "", "", "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "0", "", "", "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
@@ -832,7 +834,7 @@ public class NertsActivity extends SampleActivityBase {
             userOne.setStuck(true);
             findViewById(R.id.stuckButton).setBackgroundColor(0xFF00574B);
             //TODO: Finish
-            JSONObject sendPacket = makeJSON("Nertz", "", "1", "", "", "");
+            JSONObject sendPacket = makeJSON("Nertz", "", "1", "", "", "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
@@ -848,7 +850,7 @@ public class NertsActivity extends SampleActivityBase {
             userOne.setDone(false);
             findViewById(R.id.doneButton).setBackgroundColor(0xFF008577);
             //TODO: Finish
-            JSONObject sendPacket = makeJSON("Nertz", "0", "", "", "", "");
+            JSONObject sendPacket = makeJSON("Nertz", "0", "", "", "", "", "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
         }
@@ -857,11 +859,11 @@ public class NertsActivity extends SampleActivityBase {
             userOne.setDone(true);
             findViewById(R.id.doneButton).setBackgroundColor(0xFF00574B);
             //TODO: Finish
-            JSONObject sendPacket = makeJSON("Nertz", "1", "", "", "", "");
+            JSONObject sendPacket = makeJSON("Nertz", "1", "", "", "", "", userOne.getScore() + "");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
 
-            if(userOne.hasNerts() || userTwo.hasNerts() || (userOne.isDone() && (userTwoDone.get() == 1)))
+            if(userOne.hasNerts() || (userTwoNerts.get() == 1) || (userOne.isDone() && (userTwoDone.get() == 1)))
             {
                 displayEnd();
             }
@@ -884,7 +886,6 @@ public class NertsActivity extends SampleActivityBase {
 
         // noticed result is not displayed
         String userOneScore = String.valueOf(userOne.getScore());
-        String userTwoScore = String.valueOf(userTwo.getScore());
 
         if(userOne.getScore() > userTwo.getScore())
         {
@@ -896,7 +897,7 @@ public class NertsActivity extends SampleActivityBase {
         }
         else
         {
-            result.setText("User Two won " + userTwoScore + " points!");
+            result.setText("User Two won " + userTwoScore.get() + " points!");
         }
     }
 
@@ -909,15 +910,17 @@ public class NertsActivity extends SampleActivityBase {
         Intent newIntent = new Intent(this, NertsActivity.class);
         newIntent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
         startActivity(newIntent);
+        finish();
     }
 
     public void backToMainFromNerts(View view)
     {
         Intent newIntent = new Intent(this, MainActivity.class);
         startActivity(newIntent);
+        finish();
     }
 
-    private JSONObject makeJSON(String game, String done, String stuck, String pile, String card, String nertz)
+    private JSONObject makeJSON(String game, String done, String stuck, String pile, String card, String nertz, String score)
     {
         JSONObject jo = new JSONObject();
         try {
@@ -927,6 +930,7 @@ public class NertsActivity extends SampleActivityBase {
             jo.put("Pile", pile);
             jo.put("Card", card);
             jo.put("Nertz", nertz);
+            jo.put("Score", score);
         }
         catch (JSONException e)
         {
