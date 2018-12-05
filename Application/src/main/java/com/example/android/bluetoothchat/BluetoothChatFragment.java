@@ -116,7 +116,8 @@ public class BluetoothChatFragment extends Fragment {
     int userOneCount = 0;
     int userTwoCount = 0;
 
-    BlackjackActivity table;
+    BlackjackActivity table = null;
+    int packetsReceived = 0;
 
     public void setBJActivity(BlackjackActivity temp)
     {
@@ -404,6 +405,9 @@ public class BluetoothChatFragment extends Fragment {
                         case BluetoothChatService.STATE_CONNECTED:
                             setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
                             mConversationArrayAdapter.clear();
+                            if(table != null) {
+                                table.randNumSend();
+                            }
                             break;
                         case BluetoothChatService.STATE_CONNECTING:
                             setStatus(R.string.title_connecting);
@@ -424,7 +428,15 @@ public class BluetoothChatFragment extends Fragment {
                     byte[] readBuf = (byte[]) msg.obj;
                     // construct a string from the valid bytes in the buffer
                     String readMessage = new String(readBuf, 0, msg.arg1);
-                    processJSON(readMessage);
+                    packetsReceived++;
+                    if(table != null && packetsReceived == 1)
+                    {
+                        table.tableInit();
+                    }
+                    else
+                    {
+                        processJSON(readMessage);
+                    }
                     mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:

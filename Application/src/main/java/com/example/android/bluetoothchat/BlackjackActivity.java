@@ -34,6 +34,7 @@ public class BlackjackActivity extends SampleActivityBase {
     Hand userTwo = new Hand(userTwoImages, this);
 
     AtomicInteger otherRandNum = new AtomicInteger(0);
+    int myRandNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,21 +101,22 @@ public class BlackjackActivity extends SampleActivityBase {
         userTwoImages.add((ImageView)findViewById(R.id.p2card8));
         userTwoImages.add((ImageView)findViewById(R.id.p2card9));
         userTwoImages.add((ImageView)findViewById(R.id.p2card10));
+    }
 
+    public void randNumSend()
+    {
         Random rand = new Random();
-        int randomNum = rand.nextInt(10000000);
+        myRandNum = rand.nextInt(10000000);
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
-        JSONObject sendPacket = makeJSON("Blackjack", "", "", "", "" + randomNum, "");
+        JSONObject sendPacket = makeJSON("Blackjack", "", "", "", "" + myRandNum, "");
         sendText.setText(sendPacket.toString());
         mSendButton.performClick();
+    }
 
-        while(otherRandNum.get() == 0)
-        {
-            ;
-        }
-
-        if(otherRandNum.get() < randomNum)
+    public void tableInit()
+    {
+        if(otherRandNum.get() < myRandNum)
         {
             //Initial hand set up
             Card someCard = deck.deal();
