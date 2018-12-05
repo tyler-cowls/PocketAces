@@ -12,16 +12,16 @@
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-mdpi-v4/abc_ic_star_half_black_48dp.png"
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-mdpi_card21.png.flat",
+        "source": "/Users/Tyler/PocketAces/Application/src/main/res/drawable-mdpi/card21.png"
     },
     {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-mdpi_card21.png.flat",
-        "source": "/Users/Tyler/PocketAces/Application/src/main/res/drawable-mdpi/card21.png"
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-mdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -184,12 +184,12 @@
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
-        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
+        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -220,12 +220,12 @@
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
-        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/color-v23/abc_btn_colored_text_material.xml"
-    },
-    {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-mdpi_card10.png.flat",
         "source": "/Users/Tyler/PocketAces/Application/src/main/res/drawable-mdpi/card10.png"
+    },
+    {
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
+        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -592,12 +592,12 @@
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
-        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable/abc_vector_test.xml"
-    },
-    {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable_abc_btn_radio_material.xml.flat",
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
+        "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable/abc_vector_test.xml"
     },
     {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",

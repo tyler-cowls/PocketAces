@@ -2,49 +2,30 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="23"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="xxhdpi"
     format="10"
-    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.2.1"
-    timestamp="1543977102470"
+    timestamp="1543981369506"
     token="-7723923529904245294"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="363" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="0" />
     <task
         name="verifier"
-        duration="9" />
+        duration="0" />
 
     <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-apk/debug/Application-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         build-mode="FULL"
@@ -90,7 +71,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1543977102470"
+        timestamp="1543980781113"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_7.apk"
@@ -102,17 +83,30 @@
             location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/Users/Tyler/PocketAces/Application/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1543981273845"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-apk/debug/Application-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1543981369506"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Tyler/PocketAces/Application/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>
