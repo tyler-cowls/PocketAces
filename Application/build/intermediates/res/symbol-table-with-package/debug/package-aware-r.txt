@@ -721,6 +721,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pocketaces_icon
 drawable red_back_bicycle
 drawable table
 drawable tile

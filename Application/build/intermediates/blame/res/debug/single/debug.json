@@ -700,6 +700,10 @@
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xxhdpi_pocketaces_icon.png.flat",
+        "source": "/Users/Tyler/PocketAces/Application/src/main/res/drawable-xxhdpi/pocketaces_icon.png"
+    },
+    {
         "merged": "/Users/Tyler/PocketAces/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/243994c61263d73fafa52e4e7390a0ba/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },

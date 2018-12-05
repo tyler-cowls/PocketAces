@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Button;
+import android.util.Log;
 import static android.os.SystemClock.sleep;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -130,35 +131,41 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
-            sleep(100);
+            sleep(200);
+            Log.d("blackjack_test", "sending " + someCard.toString());
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            sleep(100);
+            sleep(200);
+            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "3");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             dealer.addCard(someCard);
-            sleep(100);
+            sleep(200);
+            Log.d("blackjack_test", "sending " + someCard.toString());
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userOne.addCard(someCard);
-            sleep(100);
+            sleep(200);
+            Log.d("blackjack_test", "sending " + someCard.toString());
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            sleep(100);
+            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             someCard = deck.deal();
             dealer.addCard(someCard);

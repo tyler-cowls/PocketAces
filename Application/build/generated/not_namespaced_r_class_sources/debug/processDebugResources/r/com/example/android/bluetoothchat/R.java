@@ -1725,7 +1725,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3064,11 +3064,12 @@ public final class R {
     public static final int notification_template_icon_low_bg=0x7f060096;
     public static final int notification_tile_bg=0x7f060097;
     public static final int notify_panel_notification_icon_bg=0x7f060098;
-    public static final int red_back_bicycle=0x7f060099;
-    public static final int table=0x7f06009a;
-    public static final int tile=0x7f06009b;
-    public static final int tooltip_frame_dark=0x7f06009c;
-    public static final int tooltip_frame_light=0x7f06009d;
+    public static final int pocketaces_icon=0x7f060099;
+    public static final int red_back_bicycle=0x7f06009a;
+    public static final int table=0x7f06009b;
+    public static final int tile=0x7f06009c;
+    public static final int tooltip_frame_dark=0x7f06009d;
+    public static final int tooltip_frame_light=0x7f06009e;
   }
   public static final class id {
     public static final int ALT=0x7f070000;
@@ -8118,7 +8119,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

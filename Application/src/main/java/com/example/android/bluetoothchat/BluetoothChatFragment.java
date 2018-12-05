@@ -529,6 +529,7 @@ public class BluetoothChatFragment extends Fragment {
         try
         {
             JSONObject obj = new JSONObject(message);
+            Log.d("blackjack_test", "received JSON " + obj.toString(4));
             if(obj.getString("Game").equals("Nertz"))
             {
                 if(obj.getString("Pile").equals("1"))
