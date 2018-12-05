@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Tyler/PocketAces/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
+            "outputFile": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
-                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/745ef5f73b11c32cea18ff57f6a436fd/res/values-uk/values-uk.xml",
+                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\27aebc5fe2d7b9acd39d512edfc6bf00\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,317,423,509,617,735,814,894,975,1081,1188,1286,1394,1500,1609,1779,1879",
+                        "endColumns": "109,101,105,85,107,117,78,79,80,105,106,97,107,105,108,169,99,80",
+                        "endOffsets": "210,312,418,504,612,730,809,889,970,1076,1183,1281,1389,1495,1604,1774,1874,1955"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\c6bce165bc83ef71ea3beb2d464c91ae\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,16 +28,6 @@
                         "startOffsets": "1960",
                         "endColumns": "100",
                         "endOffsets": "2056"
-                    }
-                },
-                {
-                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/4bf8f0841a28e131c25c7ddeb4a7906a/res/values-uk/values-uk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,317,423,509,617,735,814,894,975,1081,1188,1286,1394,1500,1609,1779,1879",
-                        "endColumns": "109,101,105,85,107,117,78,79,80,105,106,97,107,105,108,169,99,80",
-                        "endOffsets": "210,312,418,504,612,730,809,889,970,1076,1183,1281,1389,1495,1604,1774,1874,1955"
                     }
                 }
             ]

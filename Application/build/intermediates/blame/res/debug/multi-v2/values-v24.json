@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Tyler/PocketAces/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "C:\\PocketAces_bluetooth-master\\PocketAces_bluetooth-master\\android-BluetoothChat-master\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/4bf8f0841a28e131c25c7ddeb4a7906a/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\27aebc5fe2d7b9acd39d512edfc6bf00\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Tyler/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/b86ca2d3bbe669949ebd66e9a110db44/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\ti\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\0526ba5fd2ae1fbaf37f7af687545896\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

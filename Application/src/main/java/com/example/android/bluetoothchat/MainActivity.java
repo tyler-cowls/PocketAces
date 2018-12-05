@@ -17,10 +17,13 @@
 
 package com.example.android.bluetoothchat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ViewAnimator;
 
 import com.example.android.common.activities.SampleActivityBase;
@@ -38,6 +41,7 @@ import com.example.android.common.logger.MessageOnlyLogFilter;
  */
 public class MainActivity extends SampleActivityBase {
 
+    public static final String EXTRA_MESSAGE = "com.example.blackjack.MESSAGE";
     public static final String TAG = "MainActivity";
 
     // Whether the Log Fragment is currently shown
@@ -106,5 +110,29 @@ public class MainActivity extends SampleActivityBase {
         msgFilter.setNext(logFragment.getLogView());
 
         Log.i(TAG, "Ready");
+    }
+
+    /** Called when the user taps the Send button */
+    public void sendBlackJack(View view) {
+        Intent intent = new Intent(this, BlackjackActivity.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        message = message.substring(0,Math.min(message.length(),10));
+        if(message.isEmpty())
+            message = "No Name";
+        intent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
+        startActivity(intent);
+    }
+
+    /** Called when the user taps the Send button */
+    public void sendNerts(View view) {
+        Intent intent = new Intent(this, NertsActivity.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        message = message.substring(0,Math.min(message.length(),10));
+        if(message.isEmpty())
+            message = "No Name";
+        intent.putExtra(EXTRA_MESSAGE, message); // an extra is a key-value pair: EXTRA_MESSAGE is the key, message is the value
+        startActivity(intent);
     }
 }
