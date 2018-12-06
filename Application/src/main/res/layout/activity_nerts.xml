@@ -22,11 +22,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="234dp"
+        android:gravity="center"
         android:text="Foundations"
         android:textColor="@android:color/white"
         android:textSize="24sp"
@@ -37,14 +36,14 @@
         android:id="@+id/workPilesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
         android:text="Work Piles"
         android:textColor="@android:color/white"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/wasteLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf='@+id/work3Layout' />
 
     <RelativeLayout
         android:id="@+id/found8Layout"
@@ -52,8 +51,8 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="122dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
@@ -87,8 +86,8 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="122dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
@@ -108,8 +107,10 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
             android:background="@android:color/transparent"
             android:onClick="pressFoundSeven"
             android:padding="8dp"
@@ -121,10 +122,9 @@
         android:layout_width="78dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="190dp"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="122dp"
+        android:layout_marginRight="98dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
@@ -156,10 +156,9 @@
         android:layout_width="78dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginLeft="275dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="122dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
@@ -334,10 +333,9 @@
         android:layout_width="78dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginLeft="275dp"
         android:layout_marginTop="270dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
@@ -370,8 +368,9 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="190dp"
-        android:layout_marginLeft="190dp"
         android:layout_marginTop="270dp"
+        android:layout_marginRight="98dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <!--tools:layout_editor_absoluteX="145dp"
@@ -405,7 +404,7 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
+        android:layout_marginLeft="98dp"
         android:layout_marginTop="270dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -441,7 +440,7 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="270dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -476,10 +475,10 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/work1Layout">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
 
@@ -513,10 +512,10 @@
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/work2Layout">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
 
@@ -547,11 +546,10 @@
         android:layout_width="78dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="185dp"
-        android:layout_marginLeft="185dp"
-        android:layout_marginTop="420dp"
-        app:layout_constraintStart_toEndOf="@+id/stockLayout"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/work4Layout">
         <!--tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="461dp"-->
 
@@ -582,11 +580,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="540dp"
+        android:layout_marginBottom="16dp"
         android:text="Stock"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
@@ -597,11 +597,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginTop="540dp"
+        android:layout_marginBottom="16dp"
         android:text="Waste"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
@@ -612,11 +614,13 @@
         android:layout_width="49dp"
         android:layout_height="27dp"
         android:layout_marginStart="305dp"
-        android:layout_marginLeft="305dp"
+        android:layout_marginLeft="290dp"
         android:layout_marginTop="540dp"
+        android:layout_marginBottom="16dp"
         android:text="Nertz"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
@@ -624,29 +628,31 @@
 
     <Button
         android:id="@+id/stuckButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="193dp"
-        android:layout_marginLeft="193dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
         android:background="@color/colorPrimary"
         android:onClick="pressStuck"
         android:text="Stuck"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/nertsLayout"
+        app:layout_constraintStart_toEndOf="@+id/wasteLayout"
+        app:layout_constraintTop_toTopOf="@+id/wasteLayout" />
 
     <Button
         android:id="@+id/doneButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="193dp"
-        android:layout_marginLeft="193dp"
-        android:layout_marginTop="490dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="8dp"
         android:background="@color/colorPrimary"
         android:onClick="pressDone"
         android:text="Done"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/nertsLayout"
+        app:layout_constraintStart_toEndOf="@+id/wasteLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/wasteLayout" />
 
     <View
         android:id="@+id/view"
@@ -726,7 +732,6 @@
             android:text="Play Again?"
             android:textColor="@android:color/white"
             android:textSize="36sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
