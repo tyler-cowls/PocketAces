@@ -117,11 +117,7 @@ public class BlackjackActivity extends SampleActivityBase {
 
         Button mSendButton = (Button) findViewById(R.id.button_send);
         TextView sendText = (TextView) findViewById(R.id.edit_text_out);
-        /*
-        JSONObject sendPacket = makeJSON("Blackjack", "", "", "", myName, "");
-        sendText.setText(sendPacket.toString());
-        mSendButton.performClick();
-        */
+
         if(message.equals("bob"))
         {
             TextView textViewTurn = findViewById(R.id.textViewTurn);
@@ -135,7 +131,7 @@ public class BlackjackActivity extends SampleActivityBase {
             mSendButton.performClick();
             userOne.addCard(someCard);
             sleep(200);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
@@ -143,7 +139,7 @@ public class BlackjackActivity extends SampleActivityBase {
             mSendButton.performClick();
             userTwo.addCard(someCard);
             sleep(500);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
 
             someCard = deck.deal();
@@ -152,7 +148,7 @@ public class BlackjackActivity extends SampleActivityBase {
             mSendButton.performClick();
             dealer.addCard(someCard);
             sleep(500);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "1");
@@ -160,14 +156,14 @@ public class BlackjackActivity extends SampleActivityBase {
             mSendButton.performClick();
             userOne.addCard(someCard);
             sleep(500);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             someCard = deck.deal();
             sendPacket = makeJSON("Blackjack", "", "0", someCard.toString(), "", "2");
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             userTwo.addCard(someCard);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
 
             someCard = deck.deal();
@@ -294,7 +290,7 @@ public class BlackjackActivity extends SampleActivityBase {
         sendText.setText(sendPacket.toString());
         mSendButton.performClick();
         sleep(500);
-        Log.d("blackjack_test", "sending " + someCard.toString());
+
 
         if(userTwo.isBust() || userTwo.isValue(21) )
         {
@@ -324,7 +320,7 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             sleep(500);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
             if(userOne.isBust() || userOne.isValue(21) )
             {
@@ -431,7 +427,7 @@ public class BlackjackActivity extends SampleActivityBase {
             sendText.setText(sendPacket.toString());
             mSendButton.performClick();
             sleep(500);
-            Log.d("blackjack_test", "sending " + someCard.toString());
+
 
         }
         sendPacket = makeJSON("Blackjack", "" + dealer.getValue(), "3", "", "" + userOne.getValue(), "" + userTwo.getValue());
